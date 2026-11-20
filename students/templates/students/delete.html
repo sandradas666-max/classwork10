@@ -1,0 +1,19 @@
+{% extends 'layout/app-layout.html' %}
+
+{% block content %}
+
+<h1>Delete Student</h1>
+
+<form method="POST">
+    {% csrf_token %}
+
+    <p>
+        Are you sure you want to delete "{{ student.name }}"?
+    </p>
+
+    <input type="submit" value="Confirm Delete">
+
+    <a href="{% url 'student_list' %}">Cancel</a>
+</form>
+
+{% endblock %}
